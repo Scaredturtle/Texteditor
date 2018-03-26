@@ -28,6 +28,7 @@ def new_command():
 def open_command():
     file = filedialog.askopenfile(parent = editor, mode = 'rb', title = 'Select a file')
     if file != None:
+        textpad.delete('1.0', tkinter.END)
         contents = file.read()
         textpad.insert('1.0', contents)
         file.close()
